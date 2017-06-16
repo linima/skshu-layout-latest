@@ -101,14 +101,14 @@ var processor = {
 			function autoPlay(){
 				$('#control').removeClass('pause');
 				var distance = Number($scene.css('transform').split(',')[5].replace(')', ''));
-				distance -= 5;
+				distance -= 1;
 				progress(distance);
 				parallax(distance);
 				if(Math.abs(distance) < (pageH-h)){
 					timer = setTimeout(function(){
 						clearTimeout(timer);
 						autoPlay();
-					}, 200);
+					}, 5);
 				}else{
 					clearTimeout(timer);
 				}
